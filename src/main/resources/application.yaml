@@ -1,0 +1,13 @@
+spring:
+  datasource:
+#    hikari:
+#      jdbc-url: jdbc:mysql://localhost:3306/testdb?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&SQL_BIG_SELECTS=1
+#      username: root
+#      password: mysql
+#      driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/testdb?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&SQL_BIG_SELECTS=1
+    username: root
+    password: mysql
+
+mybatis:
+  mapper-locations: classpath*:/mapper/**/*.xml
