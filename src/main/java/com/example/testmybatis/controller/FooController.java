@@ -21,4 +21,10 @@ public class FooController {
     public int test2(String name, Integer id) {
         return fooService.testUpdate(name, id);
     }
+
+    @GetMapping("/test3")
+    public String test3() {
+        fooService.testSelectThenUpdate();
+        return "success3";
+    }
 }
