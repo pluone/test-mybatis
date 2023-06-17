@@ -5,4 +5,6 @@ import org.apache.ibatis.annotations.Param;
 
 public interface UserExMapper extends UserMapper {
     int updateName(@Param("name") String name, @Param("id") Integer id);
+
+    int updateInvokeTime(@Param("id") Integer id);
 }

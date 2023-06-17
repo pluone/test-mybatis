@@ -21,13 +21,36 @@ public class FooService {
     }
 
     @Transactional
-    public void testSelectThenUpdate() {
-        User user = userExMapper.selectByPrimaryKey(1);
+    public void testSelectThenUpdate(Integer userId) {
+        User user = userExMapper.selectByPrimaryKey(userId);
         log.info("查询完毕");
         String uuid = UUID.randomUUID().toString();
         user.setName("李思-" + uuid);
-        userExMapper.updateByPrimaryKeySelective(user);
+        // userExMapper.updateByPrimaryKeySelective(user);
+        userExMapper.updateInvokeTime(userId);
+        User user1 = userExMapper.selectByPrimaryKey(userId);
+        Integer invokeTime = user1.getInvokeTime();
+        log.info("invoke time={}", invokeTime);
+        if (invokeTime == 1) {
+            initMethod();
+        }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         log.info("更新完毕");
+    }
+
+    private void initMethod() {
+
+        log.info("执行初始化方法");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        log.info("执行初始化方法结束");
     }
 
     public int testUpdate(String name, Integer id) {

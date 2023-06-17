@@ -7,7 +7,7 @@
 
     <context id="DB2Tables" targetRuntime="MyBatis3">
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/testdb?zeroDateTimeBehavior=convertToNull&amp;amp;amp;amp;amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true&amp;SQL_BIG_SELECTS=1"
+                        connectionURL="jdbc:mysql://localhost:3306/testdb?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true&amp;SQL_BIG_SELECTS=1"
                         userId="root"
                         password="mysql">
         </jdbcConnection>
